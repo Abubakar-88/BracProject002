@@ -113,15 +113,7 @@ public class AdminPage extends Base {
         nameElement.sendKeys(name);
     }
        public void clickNextButton(){
-        try {
-
-            waitForWebdriver(driver, nextButton, Duration.ofSeconds(15));
-            nextButton.click();
-        }catch (StaleElementReferenceException e){
-
-            waitForWebdriver(driver, nextButton, Duration.ofSeconds(15));
-            nextButton.click();
-        }
+           nextButton.click();
 
        }
     public void fillValueOfVillage(String villageName){
@@ -132,7 +124,6 @@ public class AdminPage extends Base {
     }
     public void clickonVillageNmae(){
 
-        waitForWebdriver(driver, misoliButton, Duration.ofSeconds(15));
         misoliButton.click();
     }
 
@@ -159,7 +150,7 @@ public class AdminPage extends Base {
     }
 
     public void clickOnAddData(){
-       // waitForWebdriver(driver, clickAddData, Duration.ofSeconds(7));
+
         clickAddData.click();
     }
     public void ClickWorkingArea() {

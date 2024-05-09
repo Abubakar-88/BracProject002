@@ -12,6 +12,7 @@ import pages.LoginPage;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
@@ -38,8 +39,12 @@ public class UserInputDataStep extends Base {
     }
 
     @Then("I fill user email {string}")
-    public void i_fill_user_email(String uerEmail) throws InterruptedException {
-        Thread.sleep(5000);
+    public void i_fill_user_email(String uerEmail) {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
       loginPage.enterUserEmail(uerEmail);
     }
     @Then("I fill user password {string}")
@@ -57,10 +62,14 @@ public class UserInputDataStep extends Base {
     }
 
     @When("I click on the stakeholder Management")
-    public void iClickOnTheStakeholderManagement() throws InterruptedException {
+    public void iClickOnTheStakeholderManagement()  {
 
         windowhandles();
-        Thread.sleep(10000);
+        try {
+            TimeUnit.SECONDS.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         adminPage.clickStackHolder();
     }
 
@@ -71,15 +80,19 @@ public class UserInputDataStep extends Base {
     }
 
     @Then("I want to click on add data sign")
-    public void iWantToClickOnAddDataSign() throws InterruptedException {
-        Thread.sleep(3000);
+    public void iWantToClickOnAddDataSign()  {
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
       adminPage.clickOnAddData();
 
     }
 
 
     @Then("I CLick on working area")
-    public void iSelectWorkingArea() throws InterruptedException {
+    public void iSelectWorkingArea() {
 
         Set<String> handles = driver.getWindowHandles();
         List<String> hList = new ArrayList<String>(handles);
@@ -96,7 +109,11 @@ public class UserInputDataStep extends Base {
 
     @And("I Click on uganda country office")
     public void iClickOnUgandaCountryOffice(){
-
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         adminPage.clickMisoliButton();
     }
 
@@ -108,18 +125,31 @@ public class UserInputDataStep extends Base {
 
     @And("I CLick on village name")
     public void iCLickOnVillageName(){
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
      adminPage.clickonVillageNmae();
     }
 
     @And("I click on next button")
-    public void iClickOnNextButton() throws InterruptedException {
-       Thread.sleep(3000);
+    public void iClickOnNextButton() {
+        try {
+            TimeUnit.SECONDS.sleep(6);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         adminPage.clickNextButton();
     }
 
     @And("I fill name {string}")
-    public void iFillName(String name) throws InterruptedException {
-        Thread.sleep(4000);
+    public void iFillName(String name)  {
+        try {
+            TimeUnit.SECONDS.sleep(7);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         adminPage.enterNAME(name);
     }
 
